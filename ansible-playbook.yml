@@ -5,5 +5,5 @@
   tasks :
 
   - name: Deploy kuber pod 
-    command:  kubectl create deployment insureme --image=docker.io/ankeetchauhan/healthcare --port=8081
+    command:  kubectl create deployment healthcare --image=docker.io/ankeetchauhan/healthcare --port=8081
     
