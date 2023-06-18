@@ -1,7 +1,7 @@
-- name : Configure Docker on EC2 Instances
-  hosts : webservers
+- name: Configure Docker on EC2 Instances
+  hosts: webservers
   become: true
-  connection : ssh
+  connection: ssh
   tasks :
 
   - name: Deploy kuber pod 
