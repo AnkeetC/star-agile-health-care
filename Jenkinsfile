@@ -15,10 +15,13 @@ node {
     stage("Image Prune"){
          sh "docker image prune -f"
     }
-
-	stage('test')
+     stage('Containerize the application'){
+        echo 'Creating Docker image'
+        sh "docker build -t ankeetchauhan505/health2 ."
+    }
+	stage('test'){
 	     sh "mvn test"
-	 
+    }	 
 	
 	stage("Ansible Deploy"){
 	    ansiblePlaybook credentialsId: '34.227.224.24', installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: '/etc/ansible/star-agile-health-care/ansible-playbook.yml'
